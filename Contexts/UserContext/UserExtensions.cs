@@ -9,15 +9,4 @@ public static class UserExtensions
 
         builder.Services.AddSqlite<UserDbContext>(connectionString);
     }
-
-    public static void AddUserServices(this WebApplicationBuilder builder)
-    {
-        // Registro de serviços
-        // Resolução de DI
-    }
-
-    public static void UseUserContext(this WebApplication app)
-    {
-        // Mapeamento de Endpoints
-    }
 }

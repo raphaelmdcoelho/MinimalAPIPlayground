@@ -12,10 +12,14 @@ public class UserRepository : IUserRepository
 
     public User Get(Guid id)
     {
-        if(id == Guid.Empty)
+        if (id == Guid.Empty)
             throw new ArgumentNullException(nameof(id));
 
-        return _dbContext.Set<User>().Find(id);
+        var user = _dbContext.Set<User>().FirstOrDefault(u => u.Id == id);
+        if (user == null)
+            throw new InvalidOperationException("User not found.");
+
+        return user;
     }
 
     public void Add(User user)

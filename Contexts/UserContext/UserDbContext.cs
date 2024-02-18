@@ -14,6 +14,7 @@ public class UserDbContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        // Move to a configuration file: EntityTypeConfiguration
         modelBuilder.Entity<User>().HasKey(m => m.Id);
         modelBuilder.Entity<User>().Property(m => m.FirstName).IsRequired();
         modelBuilder.Entity<User>().Property(m => m.FirstName).IsRequired();
