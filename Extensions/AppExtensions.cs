@@ -2,8 +2,8 @@ namespace MinimalApiPlayground.Extensions;
 
 public static class AppExtensions
 {
-    public static void UseArchitechtures(this WebApplication app)
+    public static WebApplication UserServices(this WebApplication app)
     {
-        //app.MapControllers();
+        return app;
     }
 }
